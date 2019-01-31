@@ -44,15 +44,15 @@ def main():
     #        on the Console if the current string in the Entry box
     #        is the string 'ok', but print "Goodbye" otherwise.
     # -------------------------------------------------------------------------
-    entry_box = ttk.Entry(frame1)
-    entry_box.grid()
+    entry_box1 = ttk.Entry(frame1)
+    entry_box1.grid()
 
     button2 = ttk.Button(frame1, text='Print')
-    button2['command'] = (lambda: hello_goodbye(entry_box))
+    button2['command'] = (lambda: hello_goodbye(entry_box1))
     button2.grid()
 
     # -------------------------------------------------------------------------
-    # TODO: 7.
+    # DONE: 7.
     #    -- Put a second Entry on the Frame.
     #    -- Put a third Button on the frame.
     #    -- Make this new Button respond to a button-press as follows:
@@ -74,9 +74,15 @@ def main():
     #      s = entry_box.get()
     #      n = int(s)
     ####################################################################
+    entry_box2 = ttk.Entry(frame1)
+    entry_box2.grid()
+
+    button3 = ttk.Button(frame1, text='Print String N Times')
+    button3['command'] = (lambda: print_N_times(entry_box1, entry_box2))
+    button3.grid()
 
     # -------------------------------------------------------------------------
-    # TODO: 8. As time permits, do other interesting GUI things!
+    # DONE: 8. As time permits, do other interesting GUI things!
     # -------------------------------------------------------------------------
     root.mainloop()
 
@@ -86,6 +92,18 @@ def hello_goodbye(entry_box):
         print('Hello')
     else:
         print('Goodbye')
+
+
+def print_N_times(entry_box1, entry_box2):
+    S = entry_box1.get()
+    N = int(S)
+
+    string = entry_box2.get()
+
+    for k in range(N):
+        print(string)
+
+
 
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
