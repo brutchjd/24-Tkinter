@@ -17,23 +17,25 @@ def main():
     #   ** make a window that shows up. **
     # -------------------------------------------------------------------------
     root = tkinter.Tk()
-    root.mainloop()
+
     # -------------------------------------------------------------------------
-    # TODO: 3. After reading and understanding the m2e module,
+    # DONE: 3. After reading and understanding the m2e module,
     #   ** put a Frame on the window. **
     # -------------------------------------------------------------------------
-
+    frame1 = ttk.Frame(root, padding=10)
+    frame1.grid()
     # -------------------------------------------------------------------------
-    # TODO: 4. After reading and understanding the m2e module,
+    # DONE: 4. After reading and understanding the m2e module,
     #   ** put a Button on the Frame. **
     # -------------------------------------------------------------------------
-
+    button1 = ttk.Button(frame1, text='Hello!')
+    button1.grid()
     # -------------------------------------------------------------------------
-    # TODO: 5. After reading and understanding the m3e module,
+    # DONE: 5. After reading and understanding the m3e module,
     #   ** make your Button respond to a button-press **
     #   ** by printing   "Hello"  on the Console.     **
     # -------------------------------------------------------------------------
-
+    button1['command'] = (lambda: print('Hello'))
     # -------------------------------------------------------------------------
     # TODO: 6. After reading and understanding the m4e module,
     #   -- Put an Entry box on the Frame.
@@ -70,6 +72,7 @@ def main():
     # -------------------------------------------------------------------------
     # TODO: 8. As time permits, do other interesting GUI things!
     # -------------------------------------------------------------------------
+    root.mainloop()
 
 
 # -----------------------------------------------------------------------------
